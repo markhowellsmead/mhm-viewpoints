@@ -7,7 +7,7 @@
  * Author URI:      https://permanenttourist.ch/
  * Text Domain:     mhm-viewpoints
  * Domain Path:     /languages
- * Version:         1.0.1
+ * Version:         1.0.2
  * Requires PHP: 	7.2
  */
 
@@ -39,6 +39,7 @@ add_action('init', function () {
 				'title',
 				'editor',
 				'thumbnail',
+				'page-attributes'
 			],
 			'labels' => [
 				'name' => _x('Viewpoints', 'CPT name', 'mhm-viewpoint'),
@@ -75,66 +76,6 @@ add_action('init', function () {
 	);
 
 	add_post_type_support('mhm-viewpoint', 'excerpt');
-
-	register_taxonomy('mhm-viewpoint_tag', ['mhm-viewpoint'], [
-		'labels' => [
-			'name' => _x('Tags', 'Custom taxonomy label - name', 'mhm-viewpoints'),
-			'singular_name' => _x('Tags', 'Custom taxonomy label - singular name', 'mhm-viewpoints'),
-			'menu_name' => _x('Tags', 'Custom taxonomy label - menu name', 'mhm-viewpoints'),
-			'all_items' => _x('All Tags', 'Custom taxonomy label - all items', 'mhm-viewpoints'),
-			'edit_item' => _x('Edit Tag', 'Custom taxonomy label - edit item', 'mhm-viewpoints'),
-			'view_item' => _x('View viewpoints with this tag', 'Custom taxonomy label - view item', 'mhm-viewpoints'),
-			'update_item' => _x('Update Tag', 'Custom taxonomy label - update item', 'mhm-viewpoints'),
-			'add_new_item' => _x('Add Tag', 'Custom taxonomy label - add new item', 'mhm-viewpoints'),
-			'new_item_name' => _x('New Tag', 'Custom taxonomy label - new item name', 'mhm-viewpoints'),
-			'parent_item' => _x('Parent Tag', 'Custom taxonomy label - parent item', 'mhm-viewpoints'),
-			'parent_item_colon' => _x('Parent Tag:', 'Custom taxonomy label - parent item colon', 'mhm-viewpoints'),
-			'search_items' => _x('Search Tags', 'Custom taxonomy label - search items', 'mhm-viewpoints'),
-			'popular_items'  => _x('Popular Tags', 'Custom taxonomy label - popular items', 'mhm-viewpoints'),
-			'separate_items_with_commas' => _x('Comma-separated Tags', 'Custom taxonomy label - separate items with comma', 'mhm-viewpoints'),
-			'add_or_remove_items'  => _x('Add or remove Tags', 'Custom taxonomy label - add or remove items', 'mhm-viewpoints'),
-			'choose_from_most_used'  => _x('Choose from most used Tags', 'Custom taxonomy label - choose from most used', 'mhm-viewpoints'),
-			'not_found'  => _x('No Tags found', 'Custom taxonomy label - not found', 'mhm-viewpoints'),
-			'back_to_items' => _x('← Back to the Tags', 'Custom taxonomy label - back to items', 'mhm-viewpoints')
-		],
-		'hierarchical' => false,
-		'show_ui' => true,
-		'publicly_queryable' => true,
-		'show_in_rest' => true,
-		'show_admin_column' => true,
-		'query_var' => true,
-		'rewrite' => ['slug' => 'viewpoint-tag'],
-	]);
-
-	register_taxonomy('mhm-viewpoint_destinations', ['mhm-viewpoint'], [
-		'labels' => [
-			'name' => _x('Destinations', 'Custom taxonomy label - name', 'mhm-viewpoints'),
-			'singular_name' => _x('Destinations', 'Custom taxonomy label - singular name', 'mhm-viewpoints'),
-			'menu_name' => _x('Destinations', 'Custom taxonomy label - menu name', 'mhm-viewpoints'),
-			'all_items' => _x('All Destinations', 'Custom taxonomy label - all items', 'mhm-viewpoints'),
-			'edit_item' => _x('Edit Destination', 'Custom taxonomy label - edit item', 'mhm-viewpoints'),
-			'view_item' => _x('View viewpoints in this Destination', 'Custom taxonomy label - view item', 'mhm-viewpoints'),
-			'update_item' => _x('Update Destination', 'Custom taxonomy label - update item', 'mhm-viewpoints'),
-			'add_new_item' => _x('Add Destination', 'Custom taxonomy label - add new item', 'mhm-viewpoints'),
-			'new_item_name' => _x('New Destination', 'Custom taxonomy label - new item name', 'mhm-viewpoints'),
-			'parent_item' => _x('Parent Destination', 'Custom taxonomy label - parent item', 'mhm-viewpoints'),
-			'parent_item_colon' => _x('Parent Destination:', 'Custom taxonomy label - parent item colon', 'mhm-viewpoints'),
-			'search_items' => _x('Search Destinations', 'Custom taxonomy label - search items', 'mhm-viewpoints'),
-			'popular_items'  => _x('Popular Destinations', 'Custom taxonomy label - popular items', 'mhm-viewpoints'),
-			'separate_items_with_commas' => _x('Comma-separated Destinations', 'Custom taxonomy label - separate items with comma', 'mhm-viewpoints'),
-			'add_or_remove_items'  => _x('Add or remove Destinations', 'Custom taxonomy label - add or remove items', 'mhm-viewpoints'),
-			'choose_from_most_used'  => _x('Choose from most used Destinations', 'Custom taxonomy label - choose from most used', 'mhm-viewpoints'),
-			'not_found'  => _x('No Destinations found', 'Custom taxonomy label - not found', 'mhm-viewpoints'),
-			'back_to_items' => _x('← Back to the Destinations', 'Custom taxonomy label - back to items', 'mhm-viewpoints')
-		],
-		'hierarchical' => true,
-		'show_ui' => true,
-		'publicly_queryable' => true,
-		'show_in_rest' => true,
-		'show_admin_column' => true,
-		'query_var' => true,
-		'rewrite' => ['slug' => 'destinations'],
-	]);
 });
 
 
